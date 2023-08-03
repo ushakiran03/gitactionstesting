@@ -3,7 +3,7 @@ name: Sample python project testing
 on:
   push:
     branches:
-      - test
+      - main
 
 jobs:
   build:
