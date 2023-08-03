@@ -29,6 +29,6 @@ jobs:
 
       - name: Run tests
         run: python -m unittest discover
-      - name: Run tests
-        run: sample1.py
-      
+
+      - name: Sample Python program
+        run: python sample1.py
