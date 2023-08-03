@@ -29,4 +29,8 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m unittest discover 
+          python -m unittest discover
+      - name: Run tests
+        run: |
+         print("Welcome to sample python pipeline using github actions")
+          
