@@ -1,4 +1,4 @@
-name: Sample python project testing
+name: sampleproject1
 
 on:
   push:
@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
