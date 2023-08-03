@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '1 * * * *' 
 
 jobs:
   build:
@@ -24,6 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r sample.txt
-       
+
       - name: Run tests
         run: python -m unittest discover
