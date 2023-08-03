@@ -1,0 +1,31 @@
+name: Sample python project testing
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+      - name: Set up Python ${{ matrix.python-version }}
+        run: |
+          echo "Python version: ${{ matrix.python-version }}"
+          python -m pip install --upgrade pip
+
+      - name: Checkout code
+        uses: actions/checkout@v2  # This step checks out the code from the repository
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Replace 'requirements.txt' with your project's dependencies file
+
+      - name: Run tests
+        run: |
+          python -m unittest discover  # Replace this with your actual test command
