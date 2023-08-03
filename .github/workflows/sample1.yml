@@ -19,6 +19,8 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: check the current working directory
+        run: pwd
 
       - name: Install dependencies
         run: pip install -r sample.txt
